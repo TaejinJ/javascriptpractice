@@ -35,5 +35,16 @@
 
 
     });
+    var 오브젝트 = {
+        이름들 : ["철","김","박"],
+        함수 : function(){
+            console.log(this); //이 함수의주인인 오브젝트 출력해준다
+            오브젝트.이름들.forEach(function(){
+                console.log(this); //window (근본없는 일반함수이기때문)
+             //forEach(()=>{}) arrow function 사용시 내부의 this값을 변화시키지않음
+            })
+        }
+    }
+    오브젝트.함수();
 </script>
 </html>
